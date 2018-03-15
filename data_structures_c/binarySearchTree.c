@@ -5,7 +5,7 @@
 
 /* CONCLUSIONS (important observations) !!!!! :
 
-1) the IN ORDER traversal of a binary search tree ALWAYS, i repeat, ALWAYS (EVERY FUCKING TIME) results in ascending order sorting 
+1) the IN ORDER traversal of a binary search tree ALWAYS, i repeat, ALWAYS results in ascending order sorting 
    of the numbers, irrespective of the input order or the shape (structure) of the tree;
 
 2) the PRE ORDER traversal AND POST ORDER of a BST depend on the shape (structure) of the tree and hence depends on the order in which 
