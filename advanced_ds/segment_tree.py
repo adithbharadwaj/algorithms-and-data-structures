@@ -54,7 +54,7 @@ def construct(a, l, r, node, i):
 
 # height of the segment tree. approx log2(n)
 h = int(math.log2(n) + 1)
-# size will be power(2, height)
+# size will be teo times power(2, height) cuz each node has 2 children.
 size = 2*2**h - 1
 # node contains the value of the nodes in the tree
 node = [0 for i in range(size)]
