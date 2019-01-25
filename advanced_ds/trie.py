@@ -55,7 +55,7 @@ class Trie():
 		# call the recursive function traverse.
 		self.traverse(r, res, temp)
 		# return all the words.
-		return [r for r in res]
+		return res
 
 	def traverse(self, root, res, temp):
 		if(root.isend == True): # if this is the end, then add temp to res.
@@ -69,13 +69,13 @@ class Trie():
 if __name__ == '__main__':
 
 	trie = Trie()
-	trie.insert('abcd')
-	trie.insert('abcdefgh')
-	trie.insert('abgh')
-	trie.insert('klmnop')
-	trie.insert('x')
-	trie.insert('aaaa')
-	trie.insert('aaaab')
+	trie.insert('keynote')
+	trie.insert('key')
+	trie.insert('far')
+	trie.insert('farther')
+	trie.insert('the')
+	trie.insert('there')
+	trie.insert('something')
 
 	print(trie.search('abcd'), trie.search('z'), trie.search('klmno'), trie.search('abgh'))
 	print(trie.get_all_words())
