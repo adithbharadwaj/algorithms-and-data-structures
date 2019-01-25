@@ -7,6 +7,8 @@
 # 2) if a randomized version of quicksort is used, the worst case can be avoided by choosing random pivot
 # 3) quicksort has better cache locality, i.e, better locality of reference. 
 
+import random
+
 def partition(a, l, h):
 	
 	i = l
@@ -19,11 +21,20 @@ def partition(a, l, h):
 	a[i], a[h] = a[h], a[i]
 	return i					
 
+# random partition function. generates a random number
+# between high and low and swaps the last element with the randomly generated index
+# eliminates the worst case for quick sort. since partitions are random, worst case (already sorted array) wont take O(n*n).
+def random_partition(a, l, h):
+
+	rand_index = random.randint(l, h)
+	a[rand_index], a[h] = a[h], a[rand_index]
+	return partition(a, l, h)
+
 def quicksort(a, l, h):
 
 	if(l < h):
 
-		pivot = partition(a, l, h)
+		pivot = random_partition(a, l, h)
 
 		quicksort(a, pivot + 1, h)
 		quicksort(a, l, pivot - 1)
