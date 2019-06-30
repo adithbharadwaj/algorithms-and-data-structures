@@ -1,4 +1,4 @@
-// deapth first search of a binary tree in c++
+// breadth first search of a binary tree in c++
 
 #include<iostream>
 #include<queue>
