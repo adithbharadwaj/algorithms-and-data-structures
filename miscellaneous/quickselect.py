@@ -12,9 +12,6 @@ Partition function remains the same as quick sort.
 
 '''
 
-a = list(map(int, input('Enter the elements \n').split()))
-k = int(input('Enter the value of k  \n'))
-
 import random
 
 def partition(a, l, h):
@@ -51,5 +48,8 @@ def random_partition(a, l, h):
 	return partition(a, l, h)
 
 if __name__ == '__main__':
+
+	a = list(map(int, input('Enter the elements \n').split()))
+	k = int(input('Enter the value of k  \n'))
 
 	print('kth smallest element is: ', quickselect(a, 0, len(a) - 1, k))
