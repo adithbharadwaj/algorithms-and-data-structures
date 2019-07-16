@@ -1,17 +1,121 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
+
+// node definition
+struct Node{
     int data;
     struct Node* left;
     struct Node* right;
-    Node (int data)
-    {
+
+    Node (int data){
         this->data = data;
         left = right = NULL;
     }
 };
+
+
+/* SIMPLE METHOD USING HASH MAP */
+
+
+// inorder traversal	
+void inorder_simple(struct Node *root) {
+
+	unordered_map<Node*, int> cnt;
+    stack<Node*> st;
+    
+    st.push(root);
+    while(!st.empty()){
+
+        Node* cur = st.top();
+        if(cur == NULL) { 
+        	st.pop(); 
+        	continue; 
+        }
+        
+        if (cnt[cur] == 0) 
+        	st.push(cur->left);
+   
+        else if(cnt[cur] == 1) 
+        	cout << cur->data << " " ;
+        
+        else if(cnt[cur] == 2) 
+        	st.push(cur->right);
+        
+        else 
+        	st.pop();
+        
+        cnt[cur]++;
+    }
+}
+
+
+// preorder traversal	
+void preorder_simple(struct Node *root) {
+
+	unordered_map<Node*, int> cnt;
+    stack<Node*> st;
+    
+    st.push(root);
+    while(!st.empty()){
+
+        Node* cur = st.top();
+        if(cur == NULL) { 
+        	st.pop(); 
+        	continue; 
+        }
+        
+        if (cnt[cur] == 0) 
+        	cout << cur->data << " " ;
+   
+        else if(cnt[cur] == 1) 
+        	st.push(cur->left);
+        
+        else if(cnt[cur] == 2) 
+        	st.push(cur->right);
+        
+        else 
+        	st.pop();
+        
+        cnt[cur]++;
+    }
+}
+
+
+// postorder traversal	
+void postorder_simple(struct Node *root) {
+
+	unordered_map<Node*, int> cnt;
+    stack<Node*> st;
+    
+    st.push(root);
+    while(!st.empty()){
+
+        Node* cur = st.top();
+        if(cur == NULL) { 
+        	st.pop(); 
+        	continue; 
+        }
+        
+        if (cnt[cur] == 0)         	
+        	st.push(cur->left);
+        	
+        else if(cnt[cur] == 1) 
+        	st.push(cur->right);
+        
+        else if(cnt[cur] == 2) 
+        	cout << cur->data << " " ;
+        
+        else 
+        	st.pop();
+        
+        cnt[cur]++;
+    }
+}
+
+
+/* ALTERNATE METHODS USING STACK  */
+
  
 /*
 Algorithm: 
@@ -148,23 +252,35 @@ int main()
 {
  
     /* Constructed binary tree is
-              1
+              3
             /   \
-          2      3
-        /  \
-      4     5
+          2      4
+         /        \
+        1     	   5
     */
-    struct Node *root = new Node(1);
+    struct Node *root = new Node(3);
     root->left        = new Node(2);
-    root->right       = new Node(3);
-    root->left->left  = new Node(4);
-    root->left->right = new Node(5);
- 
-    inOrder(root);
+    root->right       = new Node(4);
+    root->left->left  = new Node(1);
+    root->right->right = new Node(5);
+ 	
+ 	cout << "inorder using stack" << endl;
+ 	inOrder(root);
+ 	cout << endl;
+ 	cout << "simple inorder" << endl;
+    inorder_simple(root);
     cout << endl;
+    cout << "preorder using stack" << endl;
     iterativePreorder(root);
     cout << endl;
+    cout << "simple preorder" << endl;
+    preorder_simple(root);
+    cout << endl;
+    cout << "postorder using stack" << endl;
     postOrderIterative(root);
+    cout << endl;
+    cout << "simple postorder " << endl;
+    postorder_simple(root);
     cout << endl;
     return 0;
 }
