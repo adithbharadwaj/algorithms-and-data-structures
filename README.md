@@ -6,7 +6,7 @@ as questions on these algorithms and data structures are common in these intervi
 
 <h1> CONTRIBUTING: </h1>
 
-Contributions are welcome. Choose an algorithm or data structure not in the repository and subit a pull request. 
+Contributions are welcome. Choose an algorithm or data structure, not in the repository and submit a pull request. 
 
 <h2> data_structures: </h2> 
 
@@ -19,7 +19,7 @@ This folder contains popular sorting algorithms and their time complexities.
 <h2>  graph_algorithms: </h2> 
 
 This folder contains standard algorithms on graphs. 
-here, i've used an adjacency list representation of graphs using dedfaultdict(list) in python.
+here, I've used an adjacency list representation of graphs using dedfaultdict(list) in python.
 
 <h2>  dynamic_programming: </h2> 
 
@@ -35,6 +35,5 @@ This folder contains implementations of advanced data structures such as Tries, 
 
 <h2> miscellaneous_algorithms: </h2> 
 
-This folder contains miscellaneous algorithms commonly asked in coding interviews. These algorothms 
-also help in competitive coding.
+This folder contains miscellaneous algorithms commonly asked in coding interviews. These algorithms also help in competitive coding.
 
