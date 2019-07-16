@@ -1,5 +1,7 @@
 
-n = int(input())
+# program to generate all the subsets of a given set or array.
+
+n = int(input('enter the number of elements\n'))
 
 a = list(map(int, input().split()))
 
