@@ -7,7 +7,7 @@ print()
 a = [True for i in range(n + 1)]
 p = 2
 
-while(p < n):
+while(p*p < n):
 
 	if(a[p] == True):
 
